@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #34C759; /* Pro Paysage vert */
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+main {
+  padding: 15px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  display: block;
+  margin: 5px 0 15px 0;
+  padding: 5px;
+  width: 100%;
+}
+
+button {
+  background-color: #34C759;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #28a745;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #aaa;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: #aeaeae;
+}
