@@ -3,12 +3,12 @@ function exportPDF() {
 
     // Crée l'image du logo
     let img = new Image();
-    img.src = "logo-pro-paysage.png"; // ⚠️ fichier dans le même dossier que index.html et app.js
+    img.src = "logo-pro-paysage.png"; // fichier dans le même dossier
 
     img.onload = function() {
 
         // --- Logo ---
-        doc.addImage(img, "PNG", 15, 5, 40, 15); // x, y, largeur, hauteur
+        doc.addImage(img, "PNG", 15, 5, 40, 15);
 
         // --- Titre ---
         doc.setFontSize(18);
@@ -24,16 +24,19 @@ function exportPDF() {
         doc.text("Semaine du : " + weekStartStr, 15, 37);
 
         // --- Tableau des journées ---
-        let startY = 45; // position verticale initiale
+        let startY = 45;
         const lineHeight = 10;
+
         jours.forEach((jour, index) => {
             let y = startY + index * lineHeight;
             let texte = `${jour.date} | Chantier: ${jour.chantier} | Entrée: ${jour.heureEntree} | Dîner: ${jour.diner} | Sortie: ${jour.heureSortie} | Total: ${jour.totalJour} h`;
+            doc.setTextColor(0, 0, 0);
             doc.text(texte, 15, y);
         });
 
         // --- Total semaine et banque ---
         doc.setFontSize(14);
+        doc.setTextColor(0, 102, 0); // vert pour totals
         doc.text(`Total semaine : ${totalSemaine} h / 40 h`, 15, startY + jours.length * lineHeight + 10);
         doc.text(`Banque : ${banqueHeures.toFixed(2)} h`, 15, startY + jours.length * lineHeight + 20);
 
