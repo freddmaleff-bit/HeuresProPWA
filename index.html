@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> <img src="logo-pro-paysage.png" alt="Pro Paysage" width="120">
-<meta charset="UTF-8">
-<title>Pro Paysage - Heures</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Paysage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
+    <img src="logo-pro-paysage.png" alt="Logo Pro Paysage" class="logo">
+    <h1>Pro Paysage</h1>
 
-<h2>Pro Paysage</h2>
+    <div class="form-row">
+        <label>Nom employé :</label>
+        <input type="text" id="employee-name" placeholder="Votre nom">
+    </div>
 
-<label>Nom employé :</label>
-<input type="text" id="employeeName" placeholder="Votre nom">
+    <div class="form-row">
+        <label>Date :</label>
+        <input type="date" id="date">
+    </div>
 
-<hr>
+    <div class="form-row">
+        <label>Chantier :</label>
+        <input type="text" id="chantier">
+    </div>
 
-<label>Date :</label>
-<input type="date" id="date" onchange="updateWeeklyDisplay(this.value)">
+    <div class="form-row">
+        <label>Heure entrée :</label>
+        <input type="number" id="heure-entree" min="0" max="24">
+    </div>
 
-<label>Chantier :</label>
-<input type="text" id="chantier">
+    <div class="form-row">
+        <label>Dîner (heures) :</label>
+        <input type="number" id="diner" min="0" max="3">
+    </div>
 
-<label>Heure entrée :</label>
-<input type="time" id="startTime">
+    <div class="form-row">
+        <label>Heure sortie :</label>
+        <input type="number" id="heure-sortie" min="0" max="24">
+    </div>
 
-<label>Dîner (heures) :</label>
-<input type="number" id="lunchTime" step="0.25">
+    <div class="buttons">
+        <button onclick="ajouterJour()">Ajouter journée</button>
+        <button onclick="retirerBanque()">Retirer banque</button>
+        <button onclick="exportPDF()">Exporter PDF</button>
+    </div>
 
-<label>Heure sortie :</label>
-<input type="time" id="endTime">
+    <h2>Total semaine : <span id="total-semaine">0</span> h / 40 h</h2>
+    <h2>Banque : <span id="banque-heures">0</span> h</h2>
 
-<br><br>
+    <table id="table-journées">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Chantier</th>
+                <th>Entrée</th>
+                <th>Dîner</th>
+                <th>Sortie</th>
+                <th>Total jour</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
 
-<button onclick="addWorkDay()">Ajouter journée</button>
-<button onclick="withdrawBankHours()">Retirer banque</button>
-<button onclick="exportWeeklyPDF()">Exporter PDF</button>
-
-<h3 id="weeklyTotalDisplay">Total semaine : 0 h / 40 h</h3>
-<h3 id="bankHoursDisplay">Banque : 0 h</h3>
-
-<hr>
-
-<div id="history"></div>
-
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
 </html>
