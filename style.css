@@ -1,55 +1,62 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* fond bleu clair */
-    color: #000000; /* texte par défaut */
-    margin: 10px;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 120px;
+    margin-bottom: 10px;
 }
 
 h1 {
-    color: #009900; /* titre vert foncé */
-    font-size: 24px;
+    color: #009900;
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #006600; /* sous-titres verts moyens */
-    font-size: 18px;
+.form-row {
+    margin-bottom: 10px;
 }
 
-button {
-    background-color: #009900; /* vert boutons */
+.form-row label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #009900;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
     cursor: pointer;
-    margin: 5px 0;
+    border-radius: 3px;
 }
 
-button:hover {
-    background-color: #007700; /* vert foncé au survol */
-}
-
-input, select {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 4px 6px;
-    margin: 3px 0;
-    width: 100%;
+.buttons button:hover {
+    background-color: #007700;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-th {
-    background-color: #009900;
-    color: white;
+table th, table td {
+    border: 1px solid #ccc;
     padding: 5px;
-}
-
-td {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    text-align: left;
 }
